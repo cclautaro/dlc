@@ -10,6 +10,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HomeService } from './services/home.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { IndexService } from './services/index.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     HttpClientModule
   ],
-  providers: [HomeService],
+  providers: [HomeService, IndexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

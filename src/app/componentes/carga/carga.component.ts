@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IndexModel } from 'src/app/models/index-model.model';
+import { IndexService } from '../../services/index.service';
 
 @Component({
   selector: 'app-carga',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CargaComponent implements OnInit {
 
-  constructor() { }
+  index : IndexModel[]=[];
+
+  constructor(private indexService: IndexService) { }
 
   ngOnInit(): void {
   }
+
+  cargar(){
+    this.indexService.buscarIndex().subscribe(rtdo => this.index =  rtdo);
+    console.log(this.index);
+  }
+
+  indexar(){
+    this.indexService.indexar().subscribe(rtdo => this.index.push(rtdo));
+    console.log(this.index);
+  }
+
 
 }

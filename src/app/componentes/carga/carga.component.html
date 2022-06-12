@@ -1,1 +1,16 @@
-<p>carga works!</p>
+<div class="title">
+    <h1>GULUGULU</h1>
+  </div>
+  <div style="height: 100%; background-color: white">
+    <table>
+      <tr *ngFor="let i of index">
+        <td>{{i.id}}</td>
+        <td>{{i.fecha}}</td>
+        <td>{{i.cantidadDocumentos}}</td>
+        <td>{{i.cantidadPalabrasNuevas}}</td>
+        <td>{{i.cantidadPalabrasActualizadas}}</td>
+        <td>{{i.milisegundos}}</td>
+      </tr>
+    </table>
+    
+  </div>
