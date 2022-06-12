@@ -1,0 +1,22 @@
+<div class="title">
+  <h1>GULUGULU</h1>
+</div>
+<div class="p-5 h-100 contenedor">
+  <div class="custom col-md-12">
+    <input type="text" placeholder="Busque hijo" class="custom-input" [(ngModel)]="query"/>
+    <i class="fas fa-search fa-lg" (click)="buscar()"></i>
+  </div>
+</div>
+<div style="height: 100%; background-color: white">
+  <table>
+    <tr *ngFor="let lis of resultados | paginate: {itemsPerPage: 5, currentPage: p}">
+      <hr />
+      <div>
+        <p>{{ lis.docName }}</p>
+        <p>{{ lis.ir }}</p>
+        <p> {{ lis.contextWords}}</p>
+      </div>
+    </tr>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
