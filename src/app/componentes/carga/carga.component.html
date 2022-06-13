@@ -1,19 +1,53 @@
-<div class="title">
-    <h1>GULUGULU</h1>
+<div class="d-flex align-items-end flex-column">
+  <div class="p-2">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="indexar()"
+    >
+      INDEXAR
+    </button>
   </div>
-
-  <button (click)="indexar()">index</button>
-  <button (click)="cargar()">load</button>
-  <div style="height: 100%; background-color: white">
-    <table>
-      <tr *ngFor="let i of index">
-        <td>{{i.id}}</td>
-        <td>{{i.fecha}}</td>
-        <td>{{i.cantidadDocumentos}}</td>
-        <td>{{i.cantidadPalabrasNuevas}}</td>
-        <td>{{i.cantidadPalabrasActualizadas}}</td>
-        <td>{{i.milisegundos}}</td>
+</div>
+<hr>
+<div style="height: 100%; background-color: white">
+  <table style="width: 100%" class="table table-bordered table-striped">
+    <thead>
+      <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Cantidad de documentos</th>
+      <th scope="col">Cantiad de Palabras Nuevas</th>
+      <th scope="col">Cantiad de Palabras Actualizadas</th>
+      <th scope="col">Tiempo</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>12</td>
+        <td>25</td>
+        <td>54</td>
+        <td>2</td>
+        <td>6543</td>
       </tr>
-    </table>
-    
-  </div>
+      <tbody>
+        <tr>
+          <td>12</td>
+          <td>123</td>
+          <td>253</td>
+          <td>544</td>
+          <td>22</td>
+          <td>65431</td>
+        </tr>
+      <tr *ngFor="let i of index">
+        <td>{{ i.id }}</td>
+        <td>{{ i.fecha }}</td>
+        <td>{{ i.cantidadDocumentos }}</td>
+        <td>{{ i.cantidadPalabrasNuevas }}</td>
+        <td>{{ i.cantidadPalabrasActualizadas }}</td>
+        <td>{{ i.milisegundos }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -14,6 +14,7 @@ export class CargaComponent implements OnInit {
   constructor(private indexService: IndexService) { }
 
   ngOnInit(): void {
+    this.cargar();
   }
 
   cargar(){
@@ -21,8 +22,8 @@ export class CargaComponent implements OnInit {
     console.log(this.index);
   }
 
-  indexar(){
-    this.indexService.indexar().subscribe(rtdo => this.index.push(rtdo));
+  async indexar(){
+    await this.indexService.indexar().subscribe(rtdo => this.index.push(rtdo));
     console.log(this.index);
   }
 
