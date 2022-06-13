@@ -9,7 +9,7 @@ import { IndexService } from '../../services/index.service';
 })
 export class CargaComponent implements OnInit {
 
-  index : IndexModel[]=[];
+  index: IndexModel[] = [];
 
   constructor(private indexService: IndexService) { }
 
@@ -17,12 +17,15 @@ export class CargaComponent implements OnInit {
     this.cargar();
   }
 
-  cargar(){
-    this.indexService.buscarIndex().subscribe(rtdo => this.index =  rtdo);
+  cargar() {
+    this.indexService.buscarIndex().subscribe(rtdo => this.index = rtdo);
   }
 
-  async indexar(){
-    await this.indexService.indexar().subscribe(rtdo => this.index.push(rtdo));
+  async indexar() {
+    await this.indexService.indexar().subscribe(rtdo => {
+      if (rtdo.cantidadDocumentos != 0) {
+        this.index.push(rtdo);
+      }})
   }
 
 
