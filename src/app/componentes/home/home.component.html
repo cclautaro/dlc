@@ -17,7 +17,7 @@
   style="height: 100%; background-color: white"
   *ngIf="resultados.length != 0"
 >
-  <table style="border-radius: 15px">
+  <table style="border-radius: 15px; width: 100%;">
     <tr
       *ngFor="
         let lis of resultados | paginate: { itemsPerPage: 5, currentPage: p }
@@ -29,11 +29,10 @@
         <div class="col">Peso: {{ lis.ir }}</div>
       </div>
       <p>{{ lis.contextWords }}</p>
-      <a href="http://localhost:8080/api/search/download/{{ lis.docId }}"
+      <a href="http://localhost:8080/api/search/download/{{ lis.docId }}" target="_blank"
         ><u>visualizar</u></a
       >
     </tr>
   </table>
-
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

@@ -23,7 +23,7 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of index">
+      <tr *ngFor="let i of index" ngIf="{{i.cantidadDocumentos}} != 0">
         <td>{{ i.id }}</td>
         <td>{{ i.fecha }}</td>
         <td>{{ i.cantidadDocumentos }}</td>
