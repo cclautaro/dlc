@@ -19,12 +19,10 @@ export class CargaComponent implements OnInit {
 
   cargar(){
     this.indexService.buscarIndex().subscribe(rtdo => this.index =  rtdo);
-    console.log(this.index);
   }
 
   async indexar(){
     await this.indexService.indexar().subscribe(rtdo => this.index.push(rtdo));
-    console.log(this.index);
   }
 
 

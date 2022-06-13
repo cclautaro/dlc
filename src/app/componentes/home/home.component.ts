@@ -28,8 +28,5 @@ export class HomeComponent implements OnInit {
     if (this.query != "") {
       this.homeService.buscar(this.query).subscribe(rtdo => this.resultados =  rtdo);
     }
-
-    console.log(this.resultados);
-
   }
 }
