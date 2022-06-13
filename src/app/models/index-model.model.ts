@@ -5,7 +5,7 @@ export class IndexModel {
     cantidadPalabrasNuevas : number;
     fecha : Date;
     id : number;
-    milisegundos: number;
+    miliSegundos: number;
     minutos: number;
     segundos : number;
 
@@ -22,7 +22,7 @@ export class IndexModel {
         this.cantidadPalabrasNuevas = cantidadPalabrasNuevas? cantidadPalabrasNuevas : 0;
         this.fecha = fecha? fecha : new Date;
         this.id = id? id : 0;
-        this.milisegundos = milisegundos? milisegundos : 0;
+        this.miliSegundos = milisegundos? milisegundos : 0;
         this.minutos = minutos? minutos : 0;
         this.segundos = segundos? segundos : 0;
     }
